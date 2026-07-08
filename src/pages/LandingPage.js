@@ -121,7 +121,7 @@ function LandingPage() {
           <div className="hero-top">
             <div className="hero-intro">
               <div className="name-row">
-                <img src="/images/profile.jpg" alt="Niña Fajardo" className="profile-pic" />
+                <img src="/images/me.jpg" alt="Niña Fajardo" className="profile-pic" />
                 <div>
                   <div className="eyebrow">web Designer &amp; Data Analyst — Manila, PH</div>
                   <h1 className="hero-title">
