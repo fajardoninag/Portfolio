@@ -122,14 +122,13 @@ function LandingPage() {
         <div className="container">
           <div className="hero-top">
             <div className="hero-intro">
+              <div className="eyebrow">web Designer &amp; Data Analyst — Manila, PH</div>
               <div className="name-row">
                 <img src="/images/me.jpg" alt="Niña Fajardo" className="profile-pic" />
-                <div>
-                  <div className="eyebrow">web Designer &amp; Data Analyst — Manila, PH</div>
-                  <h1 className="hero-title">
-                    Niña <em>Fajardo.</em>
-                  </h1>
-                </div>
+                <h1 className="hero-title">
+                  Niña <br />
+                   <em>Fajardo.</em>
+                </h1>
               </div>
               <p className="hero-desc">
                 A computer engineering graduate seeking a challenging career with a progressive
@@ -285,7 +284,7 @@ function LandingPage() {
           </div>
           <div>
             <p className="contact-desc">
-              I'm looking for web design and data analysis opportunities. If you're building
+              I'm looking for internship and junior developer opportunities. If you're building
               something meaningful, I'd genuinely love to hear about it.
             </p>
             <a

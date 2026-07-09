@@ -238,11 +238,10 @@ h1, h2, h3, h4 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-foreground);
-  margin-bottom: 1.5rem;
 }
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 5.2vw, 4.25rem);
+  font-size: clamp(1.6rem, 4.2vw, 2.5rem);
   line-height: 1.05;
   margin-bottom: 0;
   white-space: nowrap;
