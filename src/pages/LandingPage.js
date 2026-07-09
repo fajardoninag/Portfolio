@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
 const NAV_LINKS = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
 
 const EXPERIENCE = [
   {
-    no: '01',
+    no: '1',
     role: 'IT Support Intern',
     company: 'Hong JKH Trading Enterprises Inc. — AORUS Concept Store',
     period: 'July — September 2026',
@@ -14,7 +15,7 @@ const EXPERIENCE = [
     tags: ['Hardware Troubleshooting', 'OS Installation', 'PC Assembly & Maintenance'],
   },
   {
-    no: '02',
+    no: '2',
     role: 'Quality Assurance Intern',
     company: 'DOST Science Education Institute',
     period: 'July — September 2025',
@@ -30,7 +31,7 @@ const EXPERIENCE = [
 // add those two files to /public/images/ or swap in whatever you name them.
 const PROJECTS = [
   {
-    no: '01',
+    no: '3',
     title: 'DepEd Data Dashboard',
     category: 'Data Analysis',
     desc: 'Assisted in cleaning, organizing, and transforming DepEd enrollment records for analysis. Developed a comprehensive data dictionary and generated visualizations to support data-driven insights. Collaborated on an interactive dashboard using Plotly and Dash, enabling users to filter and analyze data by gender, grade level, and enrollment counts.',
@@ -38,7 +39,7 @@ const PROJECTS = [
     image: '/images/deped.png',
   },
   {
-    no: '02',
+    no: '4',
     title: 'Exploratory Data Analysis',
     category: 'Data Analysis',
     desc: 'Performed exploratory data analysis on a suicide rate dataset by conducting data inspection, identifying data types, cleaning and preparing data, and creating visualizations to uncover patterns, trends, and key insights.',
@@ -46,7 +47,7 @@ const PROJECTS = [
     image: '/images/data.png',
   },
   {
-    no: '03',
+    no: '5',
     title: 'Health Center Patient Record Management System',
     category: 'UI/UX & Frontend',
     desc: 'Designed the system\u2019s user interface and user experience (UI/UX) using modern design principles. Developed frontend components and interfaces to improve usability and accessibility, and conducted quality assurance testing to identify and resolve system issues.',
@@ -54,7 +55,7 @@ const PROJECTS = [
     image: '/images/espe.png',
   },
   {
-    no: '04',
+    no: '6',
     title: 'Graduate School Research Management',
     category: 'UI/UX & Frontend',
     desc: 'Assisted in frontend development by implementing user interface components and pages. Collaborated with the development team to enhance system functionality and user experience, and supported testing and debugging activities to improve system performance.',
@@ -62,7 +63,7 @@ const PROJECTS = [
     image: '/images/thesis.png',
   },
   {
-    no: '05',
+    no: '7',
     title: 'Thesis Management and Tracking System',
     category: 'UI/UX & Frontend',
     desc: 'Assisted in creating UI/UX designs and prototypes using Figma. Developed frontend pages and reusable components to support system functionality, and performed quality assurance testing to ensure system reliability and user satisfaction.',
@@ -105,6 +106,7 @@ function LandingPage() {
       {/* Nav */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="nav-inner">
+          <Link to="/" className="nav-logo">My Portfolio</Link>
           <div className="nav-links">
             {NAV_LINKS.map((link) => (
               <button key={link} className="nav-link-btn" onClick={() => scrollTo(link)}>
@@ -115,9 +117,9 @@ function LandingPage() {
         </div>
       </nav>
 
-      <div className="container">
-        {/* Hero / About */}
-        <section id="about" className="about-section">
+      {/* Hero / About */}
+      <section id="about" className="about-section alt-bg">
+        <div className="container">
           <div className="hero-top">
             <div className="hero-intro">
               <div className="name-row">
@@ -125,8 +127,7 @@ function LandingPage() {
                 <div>
                   <div className="eyebrow">web Designer &amp; Data Analyst — Manila, PH</div>
                   <h1 className="hero-title">
-                    Niña<br />
-                    <em>Fajardo.</em>
+                    Niña <em>Fajardo.</em>
                   </h1>
                 </div>
               </div>
@@ -166,10 +167,12 @@ function LandingPage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Experience */}
-        <section id="experience" className="numbered-section">
+      {/* Experience */}
+      <section id="experience" className="numbered-section">
+        <div className="container">
           <div className="section-label">
             <div className="section-index">§ 02</div>
             <h2>Internship Experience</h2>
@@ -194,10 +197,12 @@ function LandingPage() {
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Projects */}
-        <section id="projects" className="numbered-section">
+      {/* Projects */}
+      <section id="projects" className="numbered-section alt-bg">
+        <div className="container">
           <div className="section-label">
             <div className="section-index">§ 03</div>
             <h2>Major Projects</h2>
@@ -249,10 +254,12 @@ function LandingPage() {
               );
             })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Skills */}
-        <section id="skills" className="skills-section">
+      {/* Skills */}
+      <section id="skills" className="numbered-section skills-section">
+        <div className="container">
           <h2>Skills</h2>
           <div className="skills-grid">
             {Object.entries(skills).map(([category, items]) => (
@@ -266,8 +273,8 @@ function LandingPage() {
               </div>
             ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* Contact */}
       <section id="contact" className="contact-section">
@@ -278,7 +285,7 @@ function LandingPage() {
           </div>
           <div>
             <p className="contact-desc">
-              I'm looking for internship and junior developer opportunities. If you're building
+              I'm looking for web design and data analysis opportunities. If you're building
               something meaningful, I'd genuinely love to hear about it.
             </p>
             <a
