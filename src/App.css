@@ -289,13 +289,13 @@ h1, h2, h3, h4 {
 .nav-inner {
   width: 100%;
   margin: 0;
-  padding: 0.75rem 2.5rem;
+  padding: 0.75rem 1.5rem ;
   min-height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .nav-logo-btn {
   background: none; border: none; cursor: pointer;
@@ -602,7 +602,7 @@ h1, h2, h3, h4 {
   }
 
   .about-section {
-    padding: 5.5rem 0 1.75rem;
+    padding: 7.5rem 0 1.75rem;
   }
 
   #about,
@@ -614,7 +614,7 @@ h1, h2, h3, h4 {
   }
 
   .name-row {
-    flex-direction: column;
+    
     align-items: flex-start;
   }
 
