@@ -39,6 +39,7 @@
 
 html {
   font-size: var(--font-size);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -62,7 +63,7 @@ h1, h2, h3, h4 {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2.5rem 2rem;
 }
 
 /* Full-bleed alternating section background.
@@ -77,6 +78,16 @@ h1, h2, h3, h4 {
 
 .alt-bg {
   background: var(--card);
+}
+
+/* Anchor targets — offset scroll position so content isn't hidden
+   under the fixed navbar when jumping to a section via nav links. */
+#about,
+#experience,
+#projects,
+#skills,
+#contact {
+  scroll-margin-top: 5.5rem;
 }
 
 /* Navbar */
@@ -105,6 +116,7 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  margin-top: 0.4rem;
 }
 .social-links a {
   color: var(--muted-foreground);
@@ -117,7 +129,7 @@ h1, h2, h3, h4 {
   color: var(--accent);
 }
 
-.projects-section { margin-top: 4rem; }
+.projects-section { margin-top: 2.5rem; }
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -127,17 +139,17 @@ h1, h2, h3, h4 {
 .hero-intro {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 0.5rem;
 }
 .name-row {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-position: top;
   border: 1px solid var(--border);
@@ -172,7 +184,6 @@ h1, h2, h3, h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: 1rem;
 }
 .tech-tag {
   font-size: 0.75rem;
@@ -184,17 +195,17 @@ h1, h2, h3, h4 {
 }
 
 .stats-bar {
-  margin-top: 4.5rem;
-  padding-top: 2.5rem;
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--border);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem 2rem;
+  gap: 1.25rem 2rem;
   align-items: start;
 }
 .stat-value {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -203,7 +214,7 @@ h1, h2, h3, h4 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted-foreground);
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
   line-height: 1.5;
 }
 
@@ -212,25 +223,26 @@ h1, h2, h3, h4 {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
 }
 .skill-category {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted-foreground);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 .skill-tag {
   color: var(--foreground);
   border: 1px solid var(--border);
   background: none;
+  font-weight: var(--font-weight-normal);
 }
 .hero-top {
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 .eyebrow {
@@ -238,6 +250,7 @@ h1, h2, h3, h4 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-foreground);
+  margin-top: 0.25rem;
 }
 .hero-title {
   font-family: var(--font-display);
@@ -247,10 +260,11 @@ h1, h2, h3, h4 {
   white-space: nowrap;
 }
 .hero-desc {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--muted-foreground);
   max-width: 24rem;
-  line-height: 1.6;
+  line-height: 1.55;
+  margin-top: 0.5rem;
 }
 
 .hero-side {
@@ -258,45 +272,6 @@ h1, h2, h3, h4 {
   flex-direction: column;
   align-items: flex-end;
   gap: 1.25rem;
-}
-.status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  border: 1px solid var(--border);
-  padding: 0.5rem 0.75rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted-foreground);
-  white-space: nowrap;
-}
-.status-dot {
-  position: relative;
-  display: flex;
-  height: 0.5rem;
-  width: 0.5rem;
-}
-.ping {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: #4ade80;
-  opacity: 0.75;
-  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-.dot {
-  position: relative;
-  border-radius: 999px;
-  height: 0.5rem;
-  width: 0.5rem;
-  background: #22c55e;
-}
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
 }
 /* Nav */
 .navbar {
@@ -314,12 +289,13 @@ h1, h2, h3, h4 {
 .nav-inner {
   width: 100%;
   margin: 0;
-  padding: 0 2.5rem;
-  height: 3.5rem;
+  padding: 0.75rem 2.5rem;
+  min-height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .nav-logo-btn {
   background: none; border: none; cursor: pointer;
@@ -356,21 +332,21 @@ h1, h2, h3, h4 {
 .nav-cta:hover { opacity: 0.75; }
 
 /* leave room below fixed nav */
-.about-section { padding: 7rem 0 4rem; }
+.about-section { padding: 7.5rem 0 2.5rem; }
 
 /* Numbered sections (Experience) */
-.numbered-section { padding: 4.5rem 0; border-top: 1px solid var(--border); }
-.section-label .section-index { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-foreground); margin-bottom: 0.5rem; }
+.numbered-section { padding: 3rem 0; border-top: 1px solid var(--border); }
+.section-label .section-index { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-foreground); margin-bottom: 0.4rem; }
 .section-label .section-index.light { opacity: 0.4; color: inherit; }
-.section-label h2 { margin-bottom: 2rem; }
+.section-label h2 { margin-bottom: 1.25rem; }
 
-.experience-row { border-top: 1px solid var(--border); padding: 2.5rem 0; }
+.experience-row { border-top: 1px solid var(--border); padding: 1.5rem 0; }
 .experience-row:first-child { border-top: none; padding-top: 0; }
-.experience-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
-.experience-role { font-family: var(--font-display); font-size: 1.2rem; }
-.experience-company { color: var(--muted-foreground); font-size: 0.9rem; margin-top: 0.3rem; }
+.experience-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.6rem; }
+.experience-role { font-family: var(--font-display); font-size: 1.2rem; margin: 0; }
+.experience-company { color: var(--muted-foreground); font-size: 0.9rem; margin-top: 0.25rem; }
 .experience-no { font-size: 0.75rem; color: var(--muted-foreground); opacity: 0.5; flex-shrink: 0; }
-.experience-desc { color: var(--muted-foreground); line-height: 1.6; margin-bottom: 1rem; }
+.experience-desc { color: var(--muted-foreground); line-height: 1.55; margin-bottom: 0.6rem; }
 
 /* Projects — expandable accordion rows */
 .project-accordion-row {
@@ -384,7 +360,7 @@ h1, h2, h3, h4 {
   text-align: left;
   background: none;
   border: none;
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
   cursor: pointer;
   font: inherit;
   color: inherit;
@@ -397,12 +373,13 @@ h1, h2, h3, h4 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-foreground);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 .project-accordion-title {
   font-family: var(--font-display);
   font-size: 1.35rem;
   transition: color 0.2s ease;
+  margin: 0;
 }
 .project-accordion-title.is-open,
 .project-accordion-toggle:hover .project-accordion-title {
@@ -425,14 +402,14 @@ h1, h2, h3, h4 {
 }
 .project-accordion-panel.is-open {
   max-height: 900px;
-  padding-bottom: 2rem;
+  padding-bottom: 1.25rem;
 }
 
 .project-image-wrap {
   background: var(--muted);
   border-radius: var(--radius-md);
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .project-image {
   width: 100%;
@@ -441,11 +418,21 @@ h1, h2, h3, h4 {
   display: block;
 }
 
+/* Row that holds tech-tags on the left and project link pills on the right */
+.project-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Project link pill buttons (GitHub / Figma / etc.) */
 .project-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin-top: 1rem;
 }
 .project-link-btn {
   display: inline-flex;
@@ -456,9 +443,10 @@ h1, h2, h3, h4 {
   color: var(--foreground);
   border: 1px solid var(--border);
   padding: 0.4rem 0.75rem;
-  border-radius: var(--radius-sm);
+  border-radius: 6px; /* rounded pill look, overrides the sharp global --radius */
   text-decoration: none;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  background: var(--card);
 }
 .project-link-btn:hover {
   border-color: var(--accent);
@@ -466,16 +454,16 @@ h1, h2, h3, h4 {
 }
 
 /* Contact */
-.contact-section { background: var(--foreground); color: var(--background); padding: 5rem 0; margin-top: 4rem; }
+.contact-section { background: var(--foreground); color: var(--background); padding: 3rem 0; margin-top: 2.5rem; }
 .contact-inner { display: block; }
-.contact-desc { opacity: 0.6; max-width: 24rem; margin-bottom: 2rem; line-height: 1.6; }
+.contact-desc { opacity: 0.6; max-width: 24rem; margin-bottom: 1.25rem; line-height: 1.55; }
 .contact-email {
   display: inline-block; font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.5rem);
-  color: var(--background); text-decoration: none; margin-bottom: 3rem;
+  color: var(--background); text-decoration: none; margin-bottom: 1.75rem;
   word-break: break-word;
 }
 .contact-email:hover { opacity: 0.6; }
-.contact-links { display: flex; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+.contact-links { display: flex; gap: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
 .contact-links a { color: var(--background); opacity: 0.4; text-decoration: none; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .contact-links a:hover { opacity: 1; }
 
@@ -484,8 +472,8 @@ h1, h2, h3, h4 {
 .footer-inner { display: flex; justify-content: space-between; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.25; flex-wrap: wrap; gap: 0.5rem; }
 
 /* Case Study Elements */
-.case-header { text-align: center; margin-bottom: 4rem; }
-.subtitle { color: var(--muted-foreground); font-size: 1.2rem; margin-bottom: 2rem; }
+.case-header { text-align: center; margin-bottom: 2.5rem; }
+.subtitle { color: var(--muted-foreground); font-size: 1.2rem; margin-bottom: 1.25rem; }
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -496,7 +484,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 .btn:hover { background: var(--accent-hover); }
-.case-section { margin-bottom: 4rem; }
+.case-section { margin-bottom: 2.5rem; }
 .visual-container { background: var(--muted); padding: 1rem; border-radius: var(--radius-lg); margin-top: 1rem; }
 .case-img { width: 100%; height: auto; border-radius: var(--radius-md); display: block; }
 
@@ -508,7 +496,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
   .container {
-    padding: 3rem 1.25rem;
+    padding: 2rem 1.25rem;
   }
 
   .nav-inner {
@@ -523,11 +511,11 @@ h1, h2, h3, h4 {
   }
 
   .about-section {
-    padding: 6rem 0 3rem;
+    padding: 6.75rem 0 2rem;
   }
 
   .hero-top {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .hero-side {
@@ -540,36 +528,36 @@ h1, h2, h3, h4 {
   }
 
   .profile-pic {
-    width: 76px;
-    height: 76px;
+    width: 100px;
+    height: 100px;
   }
 
   .hero-desc {
     max-width: none;
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .stats-bar {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem 1rem;
-    padding-bottom: 2.25rem;
+    gap: 1rem 1rem;
+    padding-bottom: 1.5rem;
   }
 
   .stat-value {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .numbered-section {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 
   .experience-header {
-    gap: 0.75rem;
+    gap: 0.6rem;
   }
 
   .experience-role {
@@ -581,8 +569,8 @@ h1, h2, h3, h4 {
   }
 
   .contact-section {
-    padding: 3.5rem 0;
-    margin-top: 3rem;
+    padding: 2.25rem 0;
+    margin-top: 2rem;
   }
 
   .contact-desc {
@@ -597,7 +585,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 480px) {
   .container {
-    padding: 2.5rem 1rem;
+    padding: 1.75rem 1rem;
   }
 
   .nav-inner {
@@ -614,7 +602,15 @@ h1, h2, h3, h4 {
   }
 
   .about-section {
-    padding: 5.5rem 0 2.5rem;
+    padding: 4.5rem 0 1.75rem;
+  }
+
+  #about,
+  #experience,
+  #projects,
+  #skills,
+  #contact {
+    scroll-margin-top: 4.5rem;
   }
 
   .name-row {
@@ -632,7 +628,7 @@ h1, h2, h3, h4 {
 
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .experience-header {
